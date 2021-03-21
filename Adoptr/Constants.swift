@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Constants {
+    static let fontRegular = "Montserrat Regular"
+    static let fontMedium = "Montserrat Regular"
+    static let appName = "Adoptr"
+    
+}
