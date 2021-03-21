@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		236949642607C47B005B7569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236949632607C47B005B7569 /* AppDelegate.swift */; };
 		236949662607C47B005B7569 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236949652607C47B005B7569 /* SceneDelegate.swift */; };
-		236949682607C47B005B7569 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236949672607C47B005B7569 /* ViewController.swift */; };
+		236949682607C47B005B7569 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236949672607C47B005B7569 /* WelcomeViewController.swift */; };
 		2369496B2607C47B005B7569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236949692607C47B005B7569 /* Main.storyboard */; };
 		2369496D2607C47D005B7569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2369496C2607C47D005B7569 /* Assets.xcassets */; };
 		236949702607C47D005B7569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2369496E2607C47D005B7569 /* LaunchScreen.storyboard */; };
 		2369497B2607C47D005B7569 /* AdoptrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2369497A2607C47D005B7569 /* AdoptrTests.swift */; };
 		236949862607C47D005B7569 /* AdoptrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236949852607C47D005B7569 /* AdoptrUITests.swift */; };
+		236949972607C4AB005B7569 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236949962607C4AB005B7569 /* Constants.swift */; };
+		236949A82607CAAB005B7569 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 236949A62607CAAB005B7569 /* Montserrat-Medium.ttf */; };
+		236949A92607CAAB005B7569 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 236949A72607CAAB005B7569 /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,7 @@
 		236949602607C47B005B7569 /* Adoptr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Adoptr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236949632607C47B005B7569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		236949652607C47B005B7569 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		236949672607C47B005B7569 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		236949672607C47B005B7569 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		2369496A2607C47B005B7569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2369496C2607C47D005B7569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2369496F2607C47D005B7569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		236949812607C47D005B7569 /* AdoptrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdoptrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		236949852607C47D005B7569 /* AdoptrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptrUITests.swift; sourceTree = "<group>"; };
 		236949872607C47D005B7569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		236949962607C4AB005B7569 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		236949A62607CAAB005B7569 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		236949A72607CAAB005B7569 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,15 @@
 		236949622607C47B005B7569 /* Adoptr */ = {
 			isa = PBXGroup;
 			children = (
+				236949A52607CA8D005B7569 /* fonts */,
+				2369499C2607C4CD005B7569 /* Model */,
+				2369499D2607C4D6005B7569 /* View */,
+				2369499E2607C4DB005B7569 /* Controller */,
 				236949632607C47B005B7569 /* AppDelegate.swift */,
 				236949652607C47B005B7569 /* SceneDelegate.swift */,
-				236949672607C47B005B7569 /* ViewController.swift */,
-				236949692607C47B005B7569 /* Main.storyboard */,
 				2369496C2607C47D005B7569 /* Assets.xcassets */,
-				2369496E2607C47D005B7569 /* LaunchScreen.storyboard */,
 				236949712607C47D005B7569 /* Info.plist */,
+				236949962607C4AB005B7569 /* Constants.swift */,
 			);
 			path = Adoptr;
 			sourceTree = "<group>";
@@ -126,6 +134,39 @@
 				236949872607C47D005B7569 /* Info.plist */,
 			);
 			path = AdoptrUITests;
+			sourceTree = "<group>";
+		};
+		2369499C2607C4CD005B7569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2369499D2607C4D6005B7569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2369496E2607C47D005B7569 /* LaunchScreen.storyboard */,
+				236949692607C47B005B7569 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2369499E2607C4DB005B7569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				236949672607C47B005B7569 /* WelcomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		236949A52607CA8D005B7569 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				236949A62607CAAB005B7569 /* Montserrat-Medium.ttf */,
+				236949A72607CAAB005B7569 /* Montserrat-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +274,8 @@
 			files = (
 				236949702607C47D005B7569 /* LaunchScreen.storyboard in Resources */,
 				2369496D2607C47D005B7569 /* Assets.xcassets in Resources */,
+				236949A82607CAAB005B7569 /* Montserrat-Medium.ttf in Resources */,
+				236949A92607CAAB005B7569 /* Montserrat-Regular.ttf in Resources */,
 				2369496B2607C47B005B7569 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +301,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				236949682607C47B005B7569 /* ViewController.swift in Sources */,
+				236949682607C47B005B7569 /* WelcomeViewController.swift in Sources */,
 				236949642607C47B005B7569 /* AppDelegate.swift in Sources */,
 				236949662607C47B005B7569 /* SceneDelegate.swift in Sources */,
+				236949972607C4AB005B7569 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
