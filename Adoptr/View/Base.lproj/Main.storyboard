@@ -12,6 +12,9 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Welcome View Controller-->
@@ -89,7 +92,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ykk-JA-ky3" secondAttribute="bottom" id="SqE-GE-Qd0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ree-b2-W2i"/>
+                    <navigationItem key="navigationItem" id="ree-b2-W2i">
+                        <barButtonItem key="backBarButtonItem" title=" " id="tvS-3K-4TH"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="registerButton" destination="gdF-1i-mil" id="19D-fk-8bi"/>
                         <outlet property="signinButton" destination="JWv-j7-uym" id="dtI-rX-Mn9"/>
@@ -99,23 +104,125 @@
             </objects>
             <point key="canvasLocation" x="1902.8985507246377" y="79.6875"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Phone Number View Controller-->
         <scene sceneID="hJp-0d-L6N">
             <objects>
-                <viewController title="Register View Controller" id="7ca-XW-B8Q" sceneMemberID="viewController">
+                <viewController title="Phone Number View Controller" id="7ca-XW-B8Q" customClass="PhoneNumberViewController" customModule="Adoptr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdc-7m-eMp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hbl-Ow-Nbp">
+                                <rect key="frame" x="182" y="252" width="184" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOY-Zb-rQD" userLabel="Register">
+                                <rect key="frame" x="48" y="386" width="318" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="20"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="15" maxX="0.0" maxY="15"/>
+                                <state key="normal" title="CONTINUE">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continuePressed:" destination="7ca-XW-B8Q" eventType="touchUpInside" id="dL0-FX-DeV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsB-Om-zFH" userLabel="CountryCode">
+                                <rect key="frame" x="67" y="254" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My number is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSK-KD-fF7">
+                                <rect key="frame" x="128" y="180" width="159" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6gT-a1-nyd"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="xTN-Da-Gpe">
-                        <barButtonItem key="backBarButtonItem" title="hei" id="ZXn-kR-j2Q"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="VMv-46-WWv"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="countryCodeButton" destination="lsB-Om-zFH" id="jjA-4R-eW8"/>
+                        <outlet property="phoneNumberField" destination="Hbl-Ow-Nbp" id="ViP-qK-N59"/>
+                        <segue destination="i0g-6E-QUE" kind="presentation" identifier="showCountries" id="asP-41-WhK"/>
+                        <segue destination="PWF-Wy-Ge6" kind="show" identifier="continueVerification" id="OAa-Qq-5FU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGj-Ms-ylW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2684.057971014493" y="79.6875"/>
+        </scene>
+        <!--Phone Verification View Controller-->
+        <scene sceneID="rSb-iB-PPk">
+            <objects>
+                <viewController id="PWF-Wy-Ge6" customClass="PhoneVerificationViewController" customModule="Adoptr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uOD-Wm-YQ7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My code is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJk-Wf-nMQ">
+                                <rect key="frame" x="147" y="176" width="121" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D82-m8-GXq" customClass="CodeTextField" customModule="Adoptr" customModuleProvider="target">
+                                <rect key="frame" x="64" y="260" width="287" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d4v-0C-mVR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5oI-9g-WMW"/>
+                    <connections>
+                        <outlet property="codeTextField" destination="D82-m8-GXq" id="YlH-87-6ON"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bto-b1-6qS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3534.7826086956525" y="79.6875"/>
+        </scene>
+        <!--Country Table View Controller-->
+        <scene sceneID="6sO-Ma-10J">
+            <objects>
+                <tableViewController id="i0g-6E-QUE" customClass="CountryTableViewController" customModule="Adoptr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tel-z2-w6J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="i8V-cT-DMo">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i8V-cT-DMo" id="YeT-IP-5o8">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="i0g-6E-QUE" id="4fg-F6-hqM"/>
+                            <outlet property="delegate" destination="i0g-6E-QUE" id="0UO-ve-WkI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LOA-Si-gfg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2377" y="848"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jf0-GI-Y4S">
@@ -136,6 +243,7 @@
             <point key="canvasLocation" x="992.75362318840587" y="79.6875"/>
         </scene>
     </scenes>
+    <color key="tintColor" name="AccentColor"/>
     <resources>
         <image name="Paw-Print-White" width="170.5" height="170.5"/>
         <namedColor name="AccentColor">
@@ -143,6 +251,9 @@
         </namedColor>
         <systemColor name="secondarySystemBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
