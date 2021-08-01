@@ -6,24 +6,60 @@
 //
 
 import UIKit
+import Firebase
+import CoreTelephony
 
 class PhoneNumberViewController: UIViewController {
-
+    @IBOutlet weak var phoneNumberField: UITextField!
+    @IBOutlet weak var countryCodeButton: UIButton!
+    
+    var currentCountryCode: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentCountryCode = getCountryCode()
+        countryCodeButton.setTitle("+" + currentCountryCode, for: .normal)
 
         // Do any additional setup after loading the view.
     }
+
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getCountryCode() -> String {
+        guard let carrier = CTTelephonyNetworkInfo().subscriberCellularProvider, let countryCode = carrier.isoCountryCode else { return "" }
+        let countryDialingCode = K.countryCodes[countryCode.uppercased()] ?? ""
+        return countryDialingCode
     }
-    */
+    
+    @IBAction func continuePressed(_ sender: UIButton) {
+        if let phoneNumber = phoneNumberField.text {
+            let completePhoneNumber = "+" + currentCountryCode + phoneNumber
+            PhoneAuthProvider.provider()
+              .verifyPhoneNumber(completePhoneNumber, uiDelegate: nil) { verificationID, error in
+                  if let error = error {
+                    print(error)
+                    return
+                  }
+                  // Sign in using the verificationID and the code sent to the user
+                
+                print("Verification ID:")
+                print(verificationID!)
+                
+                self.performSegue(withIdentifier: K.verificationCodeSegue, sender: self)
+              }
+        } else {
+            print("Type something")
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        // Get a reference to the second view controller
+        let phoneVerificationViewController = segue.destination as! PhoneVerificationViewController
+        
+        phoneVerificationViewController
+
+        // Set a variable in the second view controller with the String to pass
+//        phoneVerificationViewController
+    }
 
 }
