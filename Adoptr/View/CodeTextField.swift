@@ -11,7 +11,7 @@ class CodeTextField: UITextField {
     
     var didEnterLastDigit: ((String) -> Void)?
     
-    var defaultCharacter: String = "-"
+    var defaultCharacter: String = "_"
     
     private var isConfigured = false
     
@@ -47,6 +47,7 @@ class CodeTextField: UITextField {
         textColor = .clear
         keyboardType = .numberPad
         textContentType = .oneTimeCode
+        isSelected = true
         
         addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         delegate = self

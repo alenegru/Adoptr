@@ -8,6 +8,17 @@ target 'Adoptr' do
   # Pods for Adoptr
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Alamofire'
+  pod 'FBSDKLoginKit'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'MessageKit'
+  pod 'SDWebImage'
+  pod 'MessageInputBar'
+  pod 'VerticalCardSwiper'
+  pod 'GeoFire'
+  # pod 'CardSlider'
+    
 
   target 'AdoptrTests' do
     inherit! :search_paths

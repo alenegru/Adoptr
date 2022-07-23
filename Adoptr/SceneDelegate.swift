@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -17,6 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        setupAppearence()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,6 +49,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else {
+            return
+        }
+
+        ApplicationDelegate.shared.application(
+            UIApplication.shared,
+            open: url,
+            sourceApplication: nil,
+            annotation: [UIApplication.OpenURLOptionsKey.annotation]
+        )
+    }
+    
+    fileprivate func setupAppearence() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().isTranslucent = true
+        UINavigationBar.appearance().backgroundColor = .clear
+        
+        let font: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : UIFont(name: "Montserrat Regular", size: 16.0)!]
+        UISegmentedControl.appearance().setTitleTextAttributes(font, for: .normal)
+        let font2: [NSAttributedString.Key : Any] = [NSAttributedString.Key.font : UIFont(name: "Montserrat Medium", size: 16.0)!]
+        UISegmentedControl.appearance().setTitleTextAttributes(font2, for: .selected)
+        //UISegmentedControl.appearance().setTitleTextAttributes(font, for: .normal)
+        
+//        let attr = NSDictionary(object: UIFont(name: "HelveticaNeue-Bold", size: 16.0)!, forKey: NSFontAttributeName)
+//        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , forState: .Normal)
+    }
+
 
 
 }
